@@ -1,11 +1,12 @@
 const h1 = document.querySelector("h1");
 const iconarray = ["✌🏻", "✊🏻", "✋🏻"];
+const h3 = document.querySelector("h3");
 function random() {
   const randomarray = iconarray[Math.floor(Math.random() * iconarray.length)];
   h1.innerText = randomarray;
 }
 random();
-let interval = setInterval(random, 300); //이렇게해도 실행이되네?
+let interval = setInterval(random, 100); //이렇게해도 실행이되네?
 
 //랜덤 가위바위보까지만듬
 
@@ -18,11 +19,11 @@ function user1(event) {
   event.preventDefault(); //clearInterval은 변수를 받아주어야 실행이가능하다
   clearInterval(interval);
   if (h1.innerText == "✌🏻") {
-    alert("Draw!!");
+    h3.innerText = "Draw!!";
   } else if (h1.innerText == "✊🏻") {
-    alert("you lose ㅠㅠ");
+    h3.innerText = "you lose ㅠㅠ";
   } else {
-    alert("you win!!!");
+    h3.innerText = "you win!!!";
   }
 }
 
@@ -30,11 +31,11 @@ function user2(event) {
   event.preventDefault(); //clearInterval은 변수를 받아주어야 실행이가능하다
   clearInterval(interval);
   if (h1.innerText == "✌🏻") {
-    alert("you win!!!");
+    h3.innerText = "you win!!!";
   } else if ((h1.innerText = "✊🏻")) {
-    alert("Draw!!");
+    h3.innerText = "Draw!!";
   } else {
-    alert("you lose ㅠㅠ");
+    h3.innerText = "you lose ㅠㅠ";
   }
 }
 
@@ -42,11 +43,11 @@ function user3(event) {
   event.preventDefault(); //clearInterval은 변수를 받아주어야 실행이가능하다
   clearInterval(interval);
   if (h1.innerText == "✌🏻") {
-    alert("you lose ㅠㅠ");
+    h3.innerText = "you lose ㅠㅠ";
   } else if ((h1.innerText = "✊🏻")) {
-    alert("you win!!!");
+    h3.innerText = "you win!!!";
   } else {
-    alert("Draw!!");
+    h3.innerText = "Draw!!";
   }
 }
 Two.addEventListener("click", user1);
