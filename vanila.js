@@ -1,6 +1,7 @@
 const h1 = document.querySelector("h1");
 const iconarray = ["✌🏻", "✊🏻", "✋🏻"];
 const h3 = document.querySelector("h3");
+const h4 = document.querySelector("h4");
 function random() {
   const randomarray = iconarray[Math.floor(Math.random() * iconarray.length)];
   h1.innerText = randomarray;
@@ -18,6 +19,7 @@ const Five = document.getElementById("five");
 function user1(event) {
   event.preventDefault(); //clearInterval은 변수를 받아주어야 실행이가능하다
   clearInterval(interval);
+  h4.innerText = "if you want to retry, please refresh this page";
   if (h1.innerText == "✌🏻") {
     h3.innerText = "Draw!!";
   } else if (h1.innerText == "✊🏻") {
@@ -30,6 +32,7 @@ function user1(event) {
 function user2(event) {
   event.preventDefault(); //clearInterval은 변수를 받아주어야 실행이가능하다
   clearInterval(interval);
+  h4.innerText = "if you want to retry, please refresh this page";
   if (h1.innerText == "✌🏻") {
     h3.innerText = "you win!!!";
   } else if ((h1.innerText = "✊🏻")) {
@@ -42,6 +45,7 @@ function user2(event) {
 function user3(event) {
   event.preventDefault(); //clearInterval은 변수를 받아주어야 실행이가능하다
   clearInterval(interval);
+  h4.innerText = "if you want to retry, please refresh this page";
   if (h1.innerText == "✌🏻") {
     h3.innerText = "you lose ㅠㅠ";
   } else if ((h1.innerText = "✊🏻")) {
