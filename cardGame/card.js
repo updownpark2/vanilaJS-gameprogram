@@ -29,10 +29,22 @@ let numarray = [];
 let iconsavearray = [];
 function sak(event) {
   const red = event.target.innerText;
+  const blue = event.target;
+  blue.classList.add("");
+  //class 추가까지가능해짐!!!
   iconsavearray.push(red);
-  localStorage.setItem("memo", JSON.stringify(iconsavearray));
-  let savedarray = localStorage.getItem("memo");
+  //여기서 [0],[1]비교해야해
+  //결국중요한건 삭제가 아니라 class추가
+  console.log(iconsavearray);
+  console.dir(blue);
+  if (iconsavearray.length == 2) {
+    iconsavearray.splice(0, 2);
+  }
+
   //이렇게해서 innerText의 값을 받게됨
+  //iconsavaedarray의 n과 n+1의 값이 같으면 적용
+  //그리고 iconsavaedarray는 길이가 3이상이안되게 조절!
+  //splice를 이용해서 0부터 2개 없애서 새롭게 만들면된다. 함수마지막에
 }
 function arraypush() {
   let randomMath = Math.floor(Math.random() * 18);
