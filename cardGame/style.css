@@ -7,9 +7,20 @@ div {
 
 button {
   margin: 0 10px;
-  padding: 10px;
+  padding: 28px;
+  font-size: 0;
 }
-
+.click {
+  font-size: 20px;
+  animation: cycle 2s ease-in-out;
+  transform: rotate(1turn);
+  transition: all 1s ease-in-out;
+}
+.back {
+  margin: 0 10px;
+  padding: 28px;
+  font-size: 0;
+}
 .hidden {
   display: none;
 }

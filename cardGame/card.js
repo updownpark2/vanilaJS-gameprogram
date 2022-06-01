@@ -30,22 +30,22 @@ let iconsavearray = [];
 function sak(event) {
   const red = event.target.innerText;
   const blue = event.target;
-  blue.classList.add("");
-  //class 추가까지가능해짐!!!
+  blue.className = "click";
   iconsavearray.push(red);
-  //여기서 [0],[1]비교해야해
-  //결국중요한건 삭제가 아니라 class추가
-  console.log(iconsavearray);
-  console.dir(blue);
-  if (iconsavearray.length == 2) {
-    iconsavearray.splice(0, 2);
-  }
-
+  let Gos = document.getElementsByClassName("click");
+  let arry = [...Gos]; //들어갔네?
+  //만약 된다면.. 비교후 class변경하는 식으로하면될듯!
+  console.log(Gos[0]);
+  console.log(Gos[1]);
+  //getElementsByClassName 이것의 요소를 쓰려면 [0],[1]의 인덱스를 써야함!
+  //HTMLCollection이라는 리턴 결과가 나온다
+  //이는 리턴 결과가 복수일 때 이렇게 나옴.
   //이렇게해서 innerText의 값을 받게됨
   //iconsavaedarray의 n과 n+1의 값이 같으면 적용
   //그리고 iconsavaedarray는 길이가 3이상이안되게 조절!
   //splice를 이용해서 0부터 2개 없애서 새롭게 만들면된다. 함수마지막에
 }
+
 function arraypush() {
   let randomMath = Math.floor(Math.random() * 18);
   if (numarray.includes(randomMath) == false) {
