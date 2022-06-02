@@ -27,24 +27,30 @@ const iconarray = [
 //이걸 섞어버려~
 let numarray = [];
 let iconsavearray = [];
+let i = -1;
 function sak(event) {
-  const red = event.target.innerText;
   const blue = event.target;
+  i = i + 1;
   blue.className = "click";
-  iconsavearray.push(red);
   let Gos = document.getElementsByClassName("click");
-  let arry = [...Gos]; //들어갔네?
-  //만약 된다면.. 비교후 class변경하는 식으로하면될듯!
-  console.log(Gos[0]);
-  console.log(Gos[1]);
-  //getElementsByClassName 이것의 요소를 쓰려면 [0],[1]의 인덱스를 써야함!
-  //HTMLCollection이라는 리턴 결과가 나온다
-  //이는 리턴 결과가 복수일 때 이렇게 나옴.
-  //이렇게해서 innerText의 값을 받게됨
-  //iconsavaedarray의 n과 n+1의 값이 같으면 적용
-  //그리고 iconsavaedarray는 길이가 3이상이안되게 조절!
-  //splice를 이용해서 0부터 2개 없애서 새롭게 만들면된다. 함수마지막에
+  if (Gos.length % 2 == 0) {
+    if (Gos[i - 1].innerText !== Gos[i].innerText) {
+      Gos[i - 1].classList.add("afterclick");
+      Gos[i].classList.add("afterclick");
+    } else if (Gos[i - 1].innerText === Gos[i].innerText) {
+      Gos[i - 1].classList.add("hidden");
+      Gos[i].classList.add("hidden");//HTMLcollectin에서는 for문이 적용되진않는다..
+      //어떻게 [0],[1]  [2],[3] 이렇게 비교할 수 있을까?    }
+  }
 }
+
+//getElementsByClassName 이것의 요소를 쓰려면 [0],[1]의 인덱스를 써야함!
+//HTMLCollection이라는 리턴 결과가 나온다
+//이는 리턴 결과가 복수일 때 이렇게 나옴.
+//이렇게해서 innerText의 값을 받게됨
+//iconsavaedarray의 n과 n+1의 값이 같으면 적용
+//그리고 iconsavaedarray는 길이가 3이상이안되게 조절!
+//splice를 이용해서 0부터 2개 없애서 새롭게 만들면된다. 함수마지막에
 
 function arraypush() {
   let randomMath = Math.floor(Math.random() * 18);
