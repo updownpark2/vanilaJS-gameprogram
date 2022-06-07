@@ -27,21 +27,24 @@ const iconarray = [
 //이걸 섞어버려~
 let numarray = [];
 let iconsavearray = [];
-let i = -1;
+let count = 0;
 function sak(event) {
   const blue = event.target;
-  i = i + 1;
   blue.className = "click";
-  let Gos = document.getElementsByClassName("click");
-  if (Gos.length % 2 == 0) {
-    if (Gos[i - 1].innerText !== Gos[i].innerText) {
-      Gos[i - 1].classList.add("afterclick");
-      Gos[i].classList.add("afterclick");
-    } else if (Gos[i - 1].innerText === Gos[i].innerText) {
-      Gos[i - 1].classList.add("hidden");
-      Gos[i].classList.add("hidden");//HTMLcollectin에서는 for문이 적용되진않는다..
-      //어떻게 [0],[1]  [2],[3] 이렇게 비교할 수 있을까?    }
+  let Gos = document.getElementsByClassName("click"); //click이라는 class를 가진
+  //요소의 정보를 얻을 수 있게됐다
+  if (Gos[count].innerText !== Gos[count + 1].innerText) {
+    Gos[count].classList.add("afterclick");
+    Gos[count + 1].classList.add("afterclick");
+    count = count + 2;
+  } else if (Gos[count].innerText === Gos[count + 1].innerText) {
+    Gos[count].classList.add("hidden");
+    Gos[count + 1].classList.add("hidden");
+    count = count + 2;
+    //HTMLcollectin에서는 for문이 적용되진않는다..
+    //어떻게 [0],[1]  [2],[3] 이렇게 비교할 수 있을까?    }
   }
+  console.log(Gos);
 }
 
 //getElementsByClassName 이것의 요소를 쓰려면 [0],[1]의 인덱스를 써야함!
@@ -101,3 +104,5 @@ spanpush3();
 //eventlistener를 이용하여 span이 해당 클릭한 span의 innertext를
 //읽을 수 있는지 !
 //button에 넣어야하나?
+
+//내 생각엔 다른방법으로 하는게 더 나을지도..

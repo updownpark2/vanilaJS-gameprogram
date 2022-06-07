@@ -1,0 +1,12 @@
+.click {
+  font-size: 30px;
+}
+.nonclick {
+  font-size: 6px;
+}
+div button {
+  font-size: 6px;
+}
+.same {
+  opacity: 0;
+}
